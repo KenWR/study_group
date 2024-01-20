@@ -13,7 +13,7 @@
 - Java 바이트코드를 실행시키기 위한 가상머신
 
 JVM 표준 규격
-![표준 규격](files/image.png)
+![표준 규격](../files/image.png)
 
 JVM은 정해진 규격이 있지 정해진 JVM 이라는 것은 없다.   
 각 회사마다 정해진 규격에 맞는 서로 다른 JVM 들이 존재한다고 생각하면 된다.
@@ -162,16 +162,16 @@ Implementation details that are not part of the Java Virtual Machine's specifica
 
 1. Marking   
 	참조, 비참조 객체를 식별한다   
-	![Marking](files/image-2.png)   
+	![Marking](../files/image-2.png)   
 2. Deletion   
 	비참조 객체를 삭제   
 	1. Normal Deletion   
 		비참조 객체를 삭제하고 참조 객체를 내버려둔다   
-		![Normal Deletion](files/image-3.png)   
+		![Normal Deletion](../files/image-3.png)   
 
 	2. Deletion with Compacting   
 		비참조 객체를 삭제하고 참조 객체들을 압축한다   
-		![Deletion with Compacting](files/image-4.png)   
+		![Deletion with Compacting](../files/image-4.png)   
 
 - 그리고 GC 는 시간이 아닌 세대별로 작동을 하는데 그 이유는 다음과 같다   
 
@@ -179,7 +179,7 @@ Implementation details that are not part of the Java Virtual Machine's specifica
 
 	2. 개체가 너무 늘어나게되면 GC 의 시간이 너무 길어지게된다   
 
-	![객체의 수명](files/image-5.png)
+	![객체의 수명](../files/image-5.png)
 
 - JVM 세대
 
