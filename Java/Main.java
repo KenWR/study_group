@@ -1,18 +1,14 @@
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) {
-		InputStream is = System.in;
-		Scanner scanner = new Scanner(is);
-
-		System.out.println("Enter a line of text: ");
-		if (scanner.hasNextLine()) {
-			String line = scanner.nextLine();
-			System.out.println("You entered: " + line);
-		} else {
-			System.err.println("No input provided.");
+	public static void main(String[] args) throws IOException {
+		FileReader fr = new FileReader("README.md");
+		Scanner sc = new Scanner(fr);
+		while (sc.hasNextLine()) {
+			System.out.println(sc.nextLine());
 		}
-		scanner.close();
 	}
 }
