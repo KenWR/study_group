@@ -1,14 +1,19 @@
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
-		FileReader fr = new FileReader("README.md");
-		Scanner sc = new Scanner(fr);
-		while (sc.hasNextLine()) {
-			System.out.println(sc.nextLine());
+	public static void main(String[] args) throws Exception {
+		Path file = Path.of("./Java/README.md");
+		try (InputStream in = Files.newInputStream(file)) {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+			String line = null;
+			while ((line = reader.readLine()) != null) {
+				System.out.println(line);
+			}
+		} catch (IOException x) {
+			System.err.println(x);
 		}
 	}
 }
